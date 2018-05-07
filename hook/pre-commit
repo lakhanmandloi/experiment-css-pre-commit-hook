@@ -1,0 +1,10 @@
+#!/bin/sh
+modifiedCssFiles=`git diff --name-only --diff-filter=AMCR HEAD | grep \.css`;
+for file in $modifiedCssFiles
+do
+	if [ "$file" != "" ]
+	then
+	  echo $file;
+	  stylelint "$file" --config .git/hooks/.stylelintrc
+	fi
+done

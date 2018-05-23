@@ -1,5 +1,5 @@
-@media screen and (max-width:600px){
-  .col-xxs-3{width:25% !important; padding-left:15px; padding-right:15px; position:relative; float:left;}
+@media screen and (max-width: 600px) { 
+  .col-xxs-3 {width: 25% !important; padding-left:15px; padding-right:15px; position:relative; float:left;}
   .col-xxs-4{width:33.33% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
   .col-xxs-6{width:50% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
   .col-xxs-9{width:75% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
@@ -10,7 +10,7 @@
   .site-2{width:30%;}
   .site-3{width:30%;} 
   .site-4{width:30%;}     
-
+ 
   .banner-text img{width: 75px;}
 }
 

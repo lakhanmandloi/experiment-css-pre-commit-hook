@@ -1,0 +1,20 @@
+#!/bin/sh
+modifiedCssFiles=`git diff --name-only --diff-filter=AMCR HEAD | grep \.css`;
+if [ "$modifiedCssFiles" != "" ]
+then
+	echo -e "\n\n\033[1;35m==============================================================\033[39m";
+	echo  "\033[1;35m====================# CSS linting started  #==================\033[39m";
+	echo "\033[1;35m==============================================================\033[39m";
+	for cssFile in $modifiedCssFiles
+	do
+	echo $cssFile
+	stylelint "$cssFile" --config .stylelintrc
+	if [ $? -eq 0 ]; then
+      echo "\n\033[1;32mSuccessful - file passed CSS lint!!\033[39m"
+    else
+      echo "\n\033[1;31mFAILED !! - Oops.. File failed in CSS lint !!\033[39m"
+      exit 1
+    fi
+	done
+fi
+exit $?
